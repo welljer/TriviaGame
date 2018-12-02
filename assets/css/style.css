@@ -19,7 +19,6 @@ body{
 
 .wrongBox{
     color:rgb(255, 94, 54);
-    background-image: url("../images/eye.jpg");
     background-color:#000000;  
     margin:0 auto;
     text-align: center;
@@ -30,7 +29,6 @@ body{
     text-align: center;
     display: none;
     color:rgb(255, 94, 54);
-    background-image: url("../images/eye.jpg");
     background-color:#000000;  
     width: 40%;
     margin: 0 auto;
@@ -65,13 +63,5 @@ body{
     border-radius: 5px;
     padding:0px 10px 5px 10px;
     box-sizing: border-box;
-    background-image: url("../images/eye.jpg"); 
 };
 
-.questions{
-    font-size: 20px;
-};
-
-.counter{
-    
-}
