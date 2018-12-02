@@ -1,5 +1,6 @@
+"use strict"
 // Questions in a object //
-var questions = [
+var quest=[
 {
     question:"Which famous toy manufacturer is also the world’s largest tire manufacturer by units produced?",
     answer:["lego","hasbro","mattel","bandai"],
@@ -71,20 +72,101 @@ var questions = [
     divClass:".animal",
 },
 ]
+//ends questions
+console.log(quest)
+//labels for answer
+var labels=["A","B","C","D"];
+
+// click to start and display questions //
+var startGame = $("#start-btn").on("click", function() {
+    $(this).parent().hide();
+    $(".container").show();
+    countdown(60);
+    question();
+});
+
+// console.log(startGame)
+
+//function for questions 
+var question = function() {
+        $(".questions :not('#sub-but')").empty();
+    for (var i = 0; i < 10; i++) {
+        $('.questions').prepend('<div class="' + quest[i].name + '"></div>');
+        $(quest[i].divClass).append('<div class ="question-title">' + quest[i].question + '</div>');
+//loop for radio buttons/answers
+    for (var j = 0; j <= 3; j++) {
+            $(quest[i].divClass).append('<input type="radio"  name="' + quest[i].name + '" value="' + quest[i].answer[j] + '"/><label for="' + labels[j] + '">' + quest[i].answer[j] + '</label>');
+        };
+        $('.questions').prepend('<br />');
+    };
+};
+
 
 // function for countdown timer //
 
-// loop through correctarray to match html elements and answers//
+var countdown = function(seconds) {
 
-// display incorrect answers//
+    var timer = setInterval(function() {
+        seconds = seconds - 1;
+        $("#time-remain").html(seconds);
 
-// alert ("time is up")//
+        if (seconds <= 0) {
+            $('.container').fadeOut(500);
+            var correctAnswers = 0;
+            var wrongAnswers = 0;
+            var unAnswered = 0;
 
-// click event for submit button//
 
-// end countdown//
 
-//function to grade quiz//
 
-//once submit is clicked test stops timer//
+//loop to radio buttons and answers//
+    for (var i = 0; i < 10; i++) {
 
+        if ($('input:radio[name="' + quest[i].name + '"]:checked').val() === quest[i].correct) {
+
+        correctAnswers++;
+        console.log("this is correct! number:" + i)
+        }else {
+        wrongAnswers++;
+        console.log("this is wrong! number:" + i)
+    };
+};
+//disply correct answers//
+            $("#correctTimesUp").append(correctAnswers);
+//display incorrect answers//
+            $("#wrongTimesUp").append(wrongAnswers);
+//times over//
+            $("#timesUp").fadein(1000).show();
+//stop timer
+        clearInterval(timer);
+        return;
+        };
+    },1000);
+            $("#sub-but").on("click", function() {
+        clearInterval(timer);
+    });
+};
+
+//grading game//
+var grade= $("#sub-but").on("click", function(){
+    var correctAnswers = 0;
+    var wrongAnswers = 0;
+    var unAnswered = 0;
+    
+    
+    for (var i=0; i<10; i++){
+        if ($("input:radio[name='" + quest[i].name + "']:checked").val() === quest[i].correct) {
+            correctAnswers++;
+    }else{
+        wrongAnswers++;
+        };
+};
+                                                
+
+countdown();
+//paste to html results
+$(".container").fadeOut(500);
+$("#answerScreen").show();
+$("#correctScreen").append(correctAnswers);
+$("#wrongScreen").append(wrongAnswers);
+});

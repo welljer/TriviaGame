@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" herf="./assets/css/reset.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" herf="./assets/css/style.css">
-    <title>Document</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type= "text/css" href="./assets/css/style.css">
+    <title>General Trivia Game</title>
 </head>
 <body>
+<!-- //intro with instructions -->
+        <div class="card-body">
+                <h1 class="display-4">Welcome to General Trivia</h1>
+                <p class="lead">We have ten questions for you to respond to</p>
+                <p>Lets see how many you can get correct</p>
+            <br />    
+                <button type="button" class="btn btn-primary blue-background white" id="start-btn">Start</button>        </div>
+<!-- //result screen upon full answer-->
+            <div class="card-body" id="answerScreen">
+                    <p id= "correctScreen">Correct Answers: </p>
+                    <p id= "wrongScreen">Incorrect Answers: </p>
+            </div>
+<!-- //result screen if time runs out -->
+    <!-- <div class="card-body"  id="timeUp">
+            <div class="wrongBox">
+                    <h1 class="up">Time has ran out!</h1>
+                    <p>Let's see the results</p>
+                <br />
+                    <p id="correctTimeup">Correct Answers: </p>
+                    <p id="wrongTimesUp">Incorrect Answers: </p>
+                </div>
+          </div> -->
+          
+          
+<!-- //counter and questions -->
+    <div class="card container">
+        <div class="card-body">
+                    <header>General Trivia</header>
+            <div class="row timeRemain">Time Remaining: 
+                        <div id="time-remain">60</div>
+            </div>
+<!-- //questions -->
+            <div class="questions">
+                <button type="button" class="btn btn-primary blue-background white" id="sub-but">Submit</button>
+            </div>
+        </div>
+    </div>
 
-    
+<!-- //end container -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="./assets/javascript/app.js"></script>
 </body>
 </html>
