@@ -9,7 +9,7 @@ and the inclusion of a 60 second timer.
 
 We hope you enjoy the environment we have provided  
 
-![picture of background]()
+![picture of background](https://github.com/welljer/TriviaGame/blob/master/assets/images/perception.jpeg)
 
 ## Technologies 
 
