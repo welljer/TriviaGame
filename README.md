@@ -11,10 +11,12 @@ We hope you enjoy the environment we have provided
 
 ![picture of background](https://github.com/welljer/TriviaGame/blob/master/assets/images/perception.jpeg)
 
-## Technologies 
+## Technologies used
 
 * [HTML5](https://www.w3.org/TR/html52/)
 * [CSS3](http://www.css3.info/)
 * [JavaScript](https://www.javascript.com/)
 * [JQuery](https://code.jquery.com/)
 * [Moment.JS](https://momentjs.com/docs/)
+
+[link to the game](https://welljer.github.io/TriviaGame/)
