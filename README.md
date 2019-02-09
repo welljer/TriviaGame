@@ -19,4 +19,6 @@ We hope you enjoy the environment we have provided
 * [JQuery](https://code.jquery.com/)
 * [Moment.JS](https://momentjs.com/docs/)
 
+## Play the game 
+
 [link to the game](https://welljer.github.io/TriviaGame/)
