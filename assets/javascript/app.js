@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 // Questions in a object //
 var quest=[
 {
@@ -73,21 +73,21 @@ var quest=[
 },
 ]
 //ends questions
-console.log(quest)
+// console.log(quest)
 //labels for answer
 var labels=["A","B","C","D"];
 
 // click to start and display questions //
 var startGame = $("#start-btn").on("click", function() {
     $(this).parent().hide();
-    $(".container").show();
+    $(".timerBox").show();
     countdown(60);
     question();
 });
 
 // console.log(startGame)
 
-//function for questions 
+//function for questions
 var question = function() {
         $(".questions :not('#sub-but')").empty();
     for (var i = 0; i < 10; i++) {
@@ -95,7 +95,7 @@ var question = function() {
         $(quest[i].divClass).append('<div class ="question-title">' + quest[i].question + '</div>');
 //loop for radio buttons/answers
     for (var j = 0; j <= 3; j++) {
-            $(quest[i].divClass).append('<input type="radio"  name="' + quest[i].name + '" value="' + quest[i].answer[j] + '"/><label for="' + labels[j] + '">' + quest[i].answer[j] + '</label>');
+            $(quest[i].divClass).append('<input type="radio"  name="' + quest[i].name + '" value="' + quest[i].answer[j] + '" ti/><label for="' + labels[j] + '">' + quest[i].answer[j] + '</label>');
         };
         $('.questions').prepend('<br />');
     };
@@ -111,7 +111,7 @@ var countdown = function(seconds) {
         $("#time-remain").html(seconds);
 
         if (seconds <= 0) {
-            $('.container').fadeOut(500);
+            $(".timerBox");
             var correctAnswers = 0;
             var wrongAnswers = 0;
             var unAnswered = 0;
@@ -131,15 +131,17 @@ var countdown = function(seconds) {
         console.log("this is wrong! number:" + i)
     };
 };
-//disply correct answers//
-            $("#correctTimesUp").append(correctAnswers);
-//display incorrect answers//
-            $("#wrongTimesUp").append(wrongAnswers);
-//times over//
-            $("#timesUp").fadein(1000).show();
+//display correct answers//
+//             $("#correctTimesUp").append(correctAnswers);
+// //display incorrect answers//
+//             $("#wrongTimesUp").append(wrongAnswers);
+// //times over//
+//             $("#timesUp").show();
+
+//             $(".timerBox").hide();
 //stop timer
         clearInterval(timer);
-        return;
+        return 0;
         };
     },1000);
             $("#sub-but").on("click", function() {
@@ -152,8 +154,7 @@ var grade= $("#sub-but").on("click", function(){
     var correctAnswers = 0;
     var wrongAnswers = 0;
     var unAnswered = 0;
-    
-    
+
     for (var i=0; i<10; i++){
         if ($("input:radio[name='" + quest[i].name + "']:checked").val() === quest[i].correct) {
             correctAnswers++;
@@ -161,12 +162,12 @@ var grade= $("#sub-but").on("click", function(){
         wrongAnswers++;
         };
 };
-                                                
 
 countdown();
 //paste to html results
-$(".container").fadeOut(500);
+// $(".timerBox").fadeOut(5);
 $("#answerScreen").show();
 $("#correctScreen").append(correctAnswers);
 $("#wrongScreen").append(wrongAnswers);
+$("#timerBox").hide()
 });
